@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scouting Nederland</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Welkom bij de website van Scouting Nederland. Ontdek uitdagende speltakken voor alle leeftijden, bekijk het laatste nieuws, word lid en vul direct de online competentieroos in voor begeleiders en teamleiding.">
+  <meta name="keywords" content="Scouting, Scouting Nederland, scoutinggroep, competentieroos, speltakken, bevers, welpen, scouts, explorers, roverscouts, jeugdvereniging, buiten spelen, kwalificatiekaart teamleiding, teamleider scouting">
+  <meta name="author" content="Scouting Nederland">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Scouting Nederland - Samen op avontuur!">
+  <meta property="og:description" content="Ontdek onze speltakken, meld je aan als lid of test je scoutingvaardigheden met de online competentieroos.">
+
+  <!-- Tailwind CSS (CDN — zie README voor productie-setup) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <!-- Lucide iconen -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <!-- Custom stijlen -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen w-full bg-white text-gray-800">
+
+  <!-- ============================================================
+       HEADER / NAVIGATIE
+       ============================================================ -->
+  <header class="w-full sticky top-0 z-50 bg-white shadow-sm">
+    <div class="brand-bar h-1.5 w-full"></div>
+    <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+
+      <!-- Logo + merknaam -->
+      <a href="#home" class="flex items-center gap-2 shrink-0">
+        <img src="images/logo.png" alt="Scouting Nederland logo" loading="lazy" class="h-11 w-11 object-contain">
+        <span class="display font-bold text-lg hidden sm:block">Scouting Nederland</span>
+      </a>
+
+      <!-- Desktop navigatie -->
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="#home"          class="font-medium hover:opacity-70">Home</a>
+        <a href="#over-ons"      class="font-medium hover:opacity-70">Over ons</a>
+        <a href="#speltakken"    class="font-medium hover:opacity-70">Speltakken</a>
+        <a href="#nieuws"        class="font-medium hover:opacity-70">Nieuws</a>
+        <a href="#lid-worden"    class="font-medium hover:opacity-70">Lid worden</a>
+        <a href="#contact"       class="font-medium hover:opacity-70">Contact</a>
+        <a href="#competentieroos"
+           class="px-4 py-2 rounded-full font-semibold text-white"
+           style="background:var(--scout-blue)">Competentieroos</a>
+      </div>
+
+      <!-- Hamburger (mobiel) -->
+      <button id="menu-toggle" class="lg:hidden p-2" aria-label="Menu openen">
+        <i data-lucide="menu"></i>
+      </button>
+    </nav>
+
+    <!-- Mobiel uitklapmenu -->
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-gray-100 px-4 pb-4 flex-col gap-1">
+      <a href="#home"           class="block py-2 font-medium">Home</a>
+      <a href="#over-ons"       class="block py-2 font-medium">Over ons</a>
+      <a href="#speltakken"     class="block py-2 font-medium">Speltakken</a>
+      <a href="#nieuws"         class="block py-2 font-medium">Nieuws</a>
+      <a href="#lid-worden"     class="block py-2 font-medium">Lid worden</a>
+      <a href="#contact"        class="block py-2 font-medium">Contact</a>
+      <a href="#competentieroos"
+         class="block py-2 mt-1 text-center rounded-full font-semibold text-white"
+         style="background:var(--scout-blue)">Competentieroos</a>
+    </div>
+  </header>
+
+  <main class="w-full">
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section id="home" class="relative w-full overflow-hidden">
+      <!-- Achtergrondafbeelding — vervang src door jouw afbeelding -->
+      <img src="images/hero.jpg" alt="Scouting Nederland" loading="lazy"
+           class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0"
+           style="background:linear-gradient(180deg, rgba(0,92,185,.55), rgba(74,161,37,.55))"></div>
+
+      <div class="relative max-w-6xl mx-auto px-4 py-24 md:py-36 text-white fade-up">
+        <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold mb-4"
+              style="background:var(--scout-yellow);color:#222">Samen op avontuur!</span>
+        <h1 class="font-bold leading-tight max-w-2xl"
+            style="font-size:clamp(2.2rem,5vw,3.5rem)">
+          Ontdek de wereld van Scouting Nederland
+        </h1>
+        <p class="mt-4 max-w-xl text-lg">
+          Bij Scouting leer je nieuwe vaardigheden, maak je vrienden voor het leven
+          en beleef je onvergetelijke avonturen — buiten, in de natuur en in jouw eigen buurt.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#lid-worden"
+             class="px-6 py-3 rounded-full font-semibold text-white"
+             style="background:var(--scout-red)">Word lid</a>
+          <a href="#speltakken"
+             class="px-6 py-3 rounded-full font-semibold bg-white"
+             style="color:var(--scout-blue)">Bekijk speltakken</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         OVER ONS
+         ============================================================ -->
+    <section id="over-ons" class="w-full py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-bold mb-4" style="color:var(--scout-green)">Over Scouting Nederland</h2>
+          <p class="text-lg font-semibold mb-3">
+            Meer dan 100 jaar avontuur, groei en vriendschap.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Scouting Nederland is de grootste jeugdorganisatie van Nederland met ruim 100.000 leden
+            verspreid over meer dan 900 groepen. We geloven dat iedere jongere de kans verdient om
+            zichzelf te ontwikkelen in een veilige, uitdagende omgeving.
+          </p>
+
+          <!-- Waardekaartjes -->
+          <div class="grid sm:grid-cols-3 gap-4 mt-8">
+            <div class="p-4 rounded-xl bg-gray-50">
+              <h3 class="font-semibold mb-1">🌿 Buiten</h3>
+              <p class="text-sm text-gray-600">We leven en leren in de buitenlucht.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-gray-50">
+              <h3 class="font-semibold mb-1">🤝 Samen</h3>
+              <p class="text-sm text-gray-600">Vriendschap en teamwork staan centraal.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-gray-50">
+              <h3 class="font-semibold mb-1">⭐ Groeien</h3>
+              <p class="text-sm text-gray-600">Elke stap maakt jou sterker en wijzer.</p>
+            </div>
+          </div>
+        </div>
+
+        <img src="images/over-ons.jpg" alt="Scouting activiteit" loading="lazy"
+             class="w-full h-80 object-cover rounded-2xl shadow-lg">
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SPELTAKKEN
+         ============================================================ -->
+    <section id="speltakken" class="w-full py-20" style="background:#F6F8F5">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="font-bold mb-3" style="color:var(--scout-blue)">Onze speltakken</h2>
+          <p class="text-gray-600">
+            Van kleine avonturiers tot zelfstandige jonge volwassenen —
+            voor elke leeftijd is er een passende speltak.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Bevers -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+            <img src="images/bevers.jpg" alt="Bevers" loading="lazy" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <span class="inline-block px-2 py-1 rounded-md text-xs font-semibold mb-2"
+                    style="background:#FFF3CD;color:#856404">5 – 7 jaar</span>
+              <h3 class="font-bold mb-1">Bevers</h3>
+              <p class="text-sm text-gray-600">
+                De kleinste spelers ontdekken spelenderwijs de natuur en maken nieuwe vriendjes.
+              </p>
+            </div>
+          </article>
+
+          <!-- Welpen -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+            <img src="images/welpen.jpg" alt="Welpen" loading="lazy" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <span class="inline-block px-2 py-1 rounded-md text-xs font-semibold mb-2"
+                    style="background:#D1ECF1;color:#0C5460">7 – 11 jaar</span>
+              <h3 class="font-bold mb-1">Welpen</h3>
+              <p class="text-sm text-gray-600">
+                Welpen leren knutselen, koken, kamperen en zichzelf redden in de natuur.
+              </p>
+            </div>
+          </article>
+
+          <!-- Scouts -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+            <img src="images/scouts.jpg" alt="Scouts" loading="lazy" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <span class="inline-block px-2 py-1 rounded-md text-xs font-semibold mb-2"
+                    style="background:#D4EDDA;color:#155724">11 – 15 jaar</span>
+              <h3 class="font-bold mb-1">Scouts</h3>
+              <p class="text-sm text-gray-600">
+                Grotere avonturen, overnachtingen in de buitenlucht en echte uitdagingen.
+              </p>
+            </div>
+          </article>
+
+          <!-- Explorers -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+            <img src="images/explorers.jpg" alt="Explorers" loading="lazy" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <span class="inline-block px-2 py-1 rounded-md text-xs font-semibold mb-2"
+                    style="background:#E2D9F3;color:#4B2D83">15 – 17 jaar</span>
+              <h3 class="font-bold mb-1">Explorers</h3>
+              <p class="text-sm text-gray-600">
+                Zelf projecten bedenken en uitvoeren, leiderschapsvaardigheden ontwikkelen.
+              </p>
+            </div>
+          </article>
+
+          <!-- Roverscouts -->
+          <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+            <img src="images/roverscouts.jpg" alt="Roverscouts" loading="lazy" class="w-full h-44 object-cover">
+            <div class="p-5">
+              <span class="inline-block px-2 py-1 rounded-md text-xs font-semibold mb-2"
+                    style="background:#F8D7DA;color:#721C24">17 – 21 jaar</span>
+              <h3 class="font-bold mb-1">Roverscouts</h3>
+              <p class="text-sm text-gray-600">
+                Zelfstandig organiseren, reizen en bijdragen aan de samenleving.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NIEUWS
+         ============================================================ -->
+    <section id="nieuws" class="w-full py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="font-bold mb-3" style="color:var(--scout-red)">Laatste nieuws</h2>
+          <p class="text-gray-600">Blijf op de hoogte van activiteiten, evenementen en updates.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <article class="rounded-2xl overflow-hidden shadow-sm bg-white border border-gray-100">
+            <img src="images/nieuws-1.jpg" alt="Nieuws 1" loading="lazy" class="w-full h-48 object-cover">
+            <div class="p-5">
+              <span class="text-xs font-semibold" style="color:var(--scout-blue)">15 juni 2025</span>
+              <h3 class="font-bold mt-1 mb-2">Zomerkamp 2025 aangekondigd</h3>
+              <p class="text-sm text-gray-600">
+                Dit jaar trekken we naar de Ardennen voor een week vol avontuur en kampvuur.
+              </p>
+            </div>
+          </article>
+
+          <article class="rounded-2xl overflow-hidden shadow-sm bg-white border border-gray-100">
+            <img src="images/nieuws-2.jpg" alt="Nieuws 2" loading="lazy" class="w-full h-48 object-cover">
+            <div class="p-5">
+              <span class="text-xs font-semibold" style="color:var(--scout-blue)">3 mei 2025</span>
+              <h3 class="font-bold mt-1 mb-2">Nieuwe Roverscouts-groep gestart</h3>
+              <p class="text-sm text-gray-600">
+                In Nijmegen is een nieuwe rovergroep van start gegaan. Aanmelden kan nog steeds!
+              </p>
+            </div>
+          </article>
+
+          <article class="rounded-2xl overflow-hidden shadow-sm bg-white border border-gray-100">
+            <img src="images/nieuws-3.jpg" alt="Nieuws 3" loading="lazy" class="w-full h-48 object-cover">
+            <div class="p-5">
+              <span class="text-xs font-semibold" style="color:var(--scout-blue)">18 april 2025</span>
+              <h3 class="font-bold mt-1 mb-2">Competentieroos nu online!</h3>
+              <p class="text-sm text-gray-600">
+                Teamleiders kunnen nu digitaal hun kwalificatiekaart invullen via onze website.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LID WORDEN
+         ============================================================ -->
+    <section id="lid-worden" class="w-full py-20" style="background:var(--scout-green)">
+      <div class="max-w-5xl mx-auto px-4 text-white text-center">
+        <h2 class="font-bold mb-3">Word lid van Scouting!</h2>
+        <p class="max-w-2xl mx-auto mb-10 opacity-95">
+          Meld je aan in drie eenvoudige stappen en begin jouw avontuur.
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-6 text-left">
+          <div class="bg-white/15 backdrop-blur rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold mb-3"
+                 style="background:var(--scout-yellow);color:#222">1</div>
+            <h3 class="font-bold mb-1">Zoek een groep</h3>
+            <p class="text-sm opacity-95">
+              Vind een scoutinggroep bij jou in de buurt via de groepsvinder op scouting.nl.
+            </p>
+          </div>
+          <div class="bg-white/15 backdrop-blur rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold mb-3"
+                 style="background:var(--scout-yellow);color:#222">2</div>
+            <h3 class="font-bold mb-1">Kom kennismaken</h3>
+            <p class="text-sm opacity-95">
+              Sluit aan bij een bijeenkomst en doe gratis mee voor een proefperiode van twee keer.
+            </p>
+          </div>
+          <div class="bg-white/15 backdrop-blur rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold mb-3"
+                 style="background:var(--scout-yellow);color:#222">3</div>
+            <h3 class="font-bold mb-1">Schrijf je in</h3>
+            <p class="text-sm opacity-95">
+              Bevalt het? Meld je officieel aan en start jouw scoutingavontuur!
+            </p>
+          </div>
+        </div>
+
+        <a href="#contact"
+           class="inline-block mt-10 px-8 py-3 rounded-full font-semibold"
+           style="background:var(--scout-red);color:#fff">Neem contact op</a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMPETENTIEROOS
+         ============================================================ -->
+    <section id="competentieroos" class="w-full py-20" style="background:#EEF3F8">
+      <div class="max-w-6xl mx-auto px-4">
+
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="inline-block px-3 py-1 rounded-full text-sm font-semibold mb-3"
+                style="background:var(--scout-yellow);color:#222">Voor teamleiding</span>
+          <h2 class="font-bold mb-3" style="color:var(--scout-blue)">Competentieroos teamleiding</h2>
+          <p class="text-gray-600">
+            Beoordeel jezelf op alle kerncompetenties van de kwalificatiekaart teamleiding.
+            Vul per onderdeel een score in van 1 (nog niet aanwezig) tot 5 (volledig beheerst).
+          </p>
+        </div>
+
+        <!-- Schaal legenda -->
+        <div class="bg-white rounded-2xl p-5 mb-8 shadow-sm grid sm:grid-cols-5 gap-3 text-sm">
+          <div><span class="font-bold" style="color:var(--scout-red)">1</span>
+            <span class="text-gray-600"> Nog niet aanwezig</span></div>
+          <div><span class="font-bold" style="color:#E88B00">2</span>
+            <span class="text-gray-600"> In ontwikkeling</span></div>
+          <div><span class="font-bold" style="color:var(--scout-yellow)">3</span>
+            <span class="text-gray-600"> Voldoende</span></div>
+          <div><span class="font-bold" style="color:#3B8A1E">4</span>
+            <span class="text-gray-600"> Goed</span></div>
+          <div><span class="font-bold" style="color:var(--scout-green)">5</span>
+            <span class="text-gray-600"> Volledig beheerst</span></div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+
+          <!-- Vragen (worden dynamisch gevuld door JS) -->
+          <div class="lg:col-span-2 space-y-8" id="roos-tasks"></div>
+
+          <!-- Score-paneel -->
+          <aside class="lg:col-span-1">
+            <div class="bg-white rounded-2xl p-6 shadow-md lg:sticky lg:top-24">
+              <h3 class="font-bold mb-4" style="color:var(--scout-green)">Jouw score</h3>
+
+              <div class="text-center mb-6">
+                <!-- Radardiagram (SVG, gevuld door JS) -->
+                <div class="flex justify-center mb-4 w-full">
+                  <svg id="roos-radar" viewBox="0 0 300 300"
+                       class="w-full max-w-[280px] h-auto mx-auto overflow-visible"></svg>
+                </div>
+                <div id="roos-total-pct" class="display font-bold text-4xl"
+                     style="color:var(--scout-blue)">0%</div>
+                <p class="text-sm text-gray-500">Totale voortgang</p>
+              </div>
+
+              <!-- Scores per hoofdtaak -->
+              <div id="roos-task-scores" class="space-y-4 mb-6"></div>
+
+              <!-- Scores per module -->
+              <div class="border-t border-gray-100 pt-4">
+                <p class="font-semibold text-sm mb-3 text-gray-700">Per module</p>
+                <div id="roos-module-scores" class="space-y-3"></div>
+              </div>
+
+              <!-- Verstuur-formulier -->
+              <form id="roos-form" class="mt-6 border-t border-gray-100 pt-5 space-y-3">
+                <div>
+                  <label for="roos-name" class="block text-sm font-medium mb-1">Naam</label>
+                  <input id="roos-name" type="text"
+                         class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2">
+                </div>
+                <div>
+                  <label for="roos-email" class="block text-sm font-medium mb-1">E-mailadres</label>
+                  <input id="roos-email" type="email"
+                         class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2">
+                </div>
+                <button type="submit"
+                        class="w-full py-3 rounded-full font-semibold text-white"
+                        style="background:var(--scout-red)">Resultaat versturen</button>
+                <p id="roos-form-msg" class="text-sm font-medium hidden"></p>
+              </form>
+
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section id="contact" class="w-full py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+
+        <div>
+          <h2 class="font-bold mb-3" style="color:var(--scout-blue)">Contact</h2>
+          <p class="text-gray-600 mb-6">
+            Heb je vragen of wil je meer informatie? Neem gerust contact met ons op.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex gap-3 items-start">
+              <i data-lucide="map-pin" style="color:var(--scout-red)"></i>
+              <div>
+                <p class="font-semibold text-sm">Adres</p>
+                <p class="text-gray-600 text-sm">Larikslaan 1, 3833 AM Leusden</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <i data-lucide="phone" style="color:var(--scout-green)"></i>
+              <div>
+                <p class="font-semibold text-sm">Telefoon</p>
+                <p class="text-gray-600 text-sm">033 – 496 09 11</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <i data-lucide="mail" style="color:var(--scout-blue)"></i>
+              <div>
+                <p class="font-semibold text-sm">E-mail</p>
+                <p class="text-gray-600 text-sm">info@scoutingnederland.nl</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <form id="contact-form" class="bg-gray-50 rounded-2xl p-6 space-y-4">
+          <div>
+            <label for="cf-name" class="block text-sm font-medium mb-1">Naam</label>
+            <input id="cf-name" type="text"
+                   class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2">
+          </div>
+          <div>
+            <label for="cf-email" class="block text-sm font-medium mb-1">E-mailadres</label>
+            <input id="cf-email" type="email"
+                   class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2">
+          </div>
+          <div>
+            <label for="cf-msg" class="block text-sm font-medium mb-1">Bericht</label>
+            <textarea id="cf-msg" rows="4"
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2"></textarea>
+          </div>
+          <button type="submit"
+                  class="w-full py-3 rounded-full font-semibold text-white"
+                  style="background:var(--scout-blue)">Verstuur bericht</button>
+          <p id="cf-msg-status" class="text-sm font-medium hidden"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="w-full py-10" style="background:#1c2b1a">
+    <div class="brand-bar h-1.5 w-full mb-8" style="margin-top:-2.5rem"></div>
+    <div class="max-w-6xl mx-auto px-4 text-center text-white/80">
+      <p class="font-semibold text-white mb-1">Scouting Nederland</p>
+      <p class="text-sm">© 2025 Scouting Nederland — Samen op avontuur!</p>
+    </div>
+  </footer>
+
+  <!-- Applicatielogica -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

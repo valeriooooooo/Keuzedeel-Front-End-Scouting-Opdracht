@@ -1,0 +1,78 @@
+/* ============================================================
+   Scouting Nederland — Custom Styles
+   Tailwind CSS handles utility classes; dit bestand bevat
+   alleen de custom CSS die niet door Tailwind gedekt wordt.
+   ============================================================ */
+
+/* --- Google Fonts import ----------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+/* --- CSS Custom Properties (merkkleurem) ------------------- */
+:root {
+  --scout-red:    #E5352B;
+  --scout-green:  #4AA125;
+  --scout-yellow: #FFD500;
+  --scout-blue:   #005CB9;
+}
+
+/* --- Typografie -------------------------------------------- */
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* --- Scroll gedrag ----------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Anker-secties hoger gescrold zodat ze niet onder de header verdwijnen */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* --- Merk-kleurenbalk (4-kleurige balk bovenin header) ----- */
+.brand-bar {
+  background: linear-gradient(
+    90deg,
+    var(--scout-red)    0%   25%,
+    var(--scout-green)  25%  50%,
+    var(--scout-yellow) 50%  75%,
+    var(--scout-blue)   75% 100%
+  );
+}
+
+/* --- Fade-up animatie (hero en kaarten) -------------------- */
+.fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Scoreknoppen in de competentieroos -------------------- */
+.scale-btn {
+  transition: all 0.15s ease;
+}
+
+.scale-btn.active {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* --- Voortgangsbalk animatie ------------------------------- */
+.prog-fill {
+  transition: width 0.5s ease;
+}
